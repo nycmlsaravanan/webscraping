@@ -14,6 +14,9 @@ def pyplot_and_sns_plots(movie_ratings,column):
     plt.ylabel("Frequency ")
     plt.title("sns Plotting frequency  ")
     plt.show()
+    sns.boxplot(y=movie_ratings[column] )
+    plt.savefig(column)
+
 movie_ratings=pd.read_csv('movie_ratings.csv')
 print(movie_ratings.info())
 #movie_ratings = pd.DataFrame({'movie': movie_names,
@@ -22,6 +25,7 @@ print(movie_ratings.info())
 #                              'metascore': movie_metascores,
 #                              'votes': movie_votes})
 pyplot_and_sns_plots(movie_ratings,'imdb')
+pyplot_and_sns_plots(movie_ratings,'n_imdb')
 pyplot_and_sns_plots(movie_ratings,'metascore')
 pyplot_and_sns_plots(movie_ratings,'votes')
 pyplot_and_sns_plots(movie_ratings,'year')
